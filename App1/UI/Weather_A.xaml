@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.UI.Weather_A">
+    <Grid BackgroundColor="#623498">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Source="bg.png" Aspect="Fill" />
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="20,40">
+            <ImageButton Source="menu.png" WidthRequest="24" 
+                         VerticalOptions="Start"
+                         HeightRequest="24" BackgroundColor="Transparent" />
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Today , 17 July 2020" TextColor="#fff" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" />
+                <Label Text="Iran , Tehran" TextColor="#fff" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+        <Grid ColumnDefinitions="*,2*" 
+              Margin="20,100,10,0"
+              VerticalOptions="Start">
+            <StackLayout VerticalOptions="Center" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                    <Label Text="DAY" FontSize="18" TextColor="#fff"  />
+                    <Image Source="up_arrow.png" Aspect="AspectFit" WidthRequest="14"  />
+                    <Label Text="42°" TextColor="#fff" FontSize="18"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                    <Label Text="NIGHT" TextColor="#fff" FontSize="18"  />
+                    <Image Source="down_arrow.png" Aspect="AspectFit" WidthRequest="14"   />
+                    <Label Text="28°" FontSize="18"  TextColor="#fff" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,20,0">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Image Source="sunc.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFit" />
+                    <Label Text="30°" FontSize="50" FontAttributes="Bold" TextColor="#fff" />
+                    <Label Text="c"  FontSize="35"  TextColor="#fff" Margin="-9,5,0,0" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,-10,0,0">
+                    <Label Text="Weather :" TextColor="#fff"  />
+                    <Label Text="Cold" FontSize="15" FontAttributes="Bold" TextColor="#fff" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        <AbsoluteLayout  Grid.Row="1" Margin="0,-10,0,0">
+            <Frame CornerRadius="40" 
+                   AbsoluteLayout.LayoutBounds="0,0,1,140"
+                   AbsoluteLayout.LayoutFlags="WidthProportional" >
+
+            </Frame>
+            <StackLayout AbsoluteLayout.LayoutFlags="XProportional"
+                         AbsoluteLayout.LayoutBounds="0.5,-50,100,150">
+
+                <Frame CornerRadius="10" HasShadow="True" VerticalOptions="Fill" BackgroundColor="Red" Padding="0">
+                    <StackLayout BackgroundColor="#fff1d4" Padding="0,10,0,0">
+                        <Image Source="sun.png" WidthRequest="40" HeightRequest="40" Aspect="Fill" HorizontalOptions="Center" VerticalOptions="Center"  />
+                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" Padding="0,10,0,6">
+                            <Image Source="thermometer.png"  WidthRequest="24"
+                               HeightRequest="30" Aspect="Fill" 
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+                            <Label Text="27°" TextColor="Black"  />
+                        </StackLayout>
+                        <StackLayout BackgroundColor="#f1ae28" HeightRequest="30">
+                            <Label Text="5:00 AM" FontSize="Medium" TextColor="#fff" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </AbsoluteLayout>
+
+
+        <Grid Grid.Row="2" BackgroundColor="#fff" ColumnDefinitions="*,*,*" Padding="0,10,0,30" Margin="0,-50,0,0">
+            <StackLayout>
+                <Image Source="sunrise.png" WidthRequest="36" HeightRequest="27" 
+                       VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill" />
+                <Label Text="Sunrise" HorizontalOptions="Center" />
+                <Label Text="05:04" HorizontalOptions="Center"  />
+            </StackLayout>
+            <StackLayout  Grid.Column="1">
+                <Image Source="wind.png" WidthRequest="36" HeightRequest="27" 
+                       VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill" />
+                <Label Text="Wind" HorizontalOptions="Center" />
+                <Label Text="05:04" HorizontalOptions="Center"  />
+            </StackLayout>
+            <StackLayout   Grid.Column="2">
+                <Image Source="sunset.png" WidthRequest="36" HeightRequest="27" 
+                       VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill" />
+                <Label Text="Sunset" HorizontalOptions="Center" />
+                <Label Text="18:45" HorizontalOptions="Center"  />
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="3" BackgroundColor="#fff" Margin="0,-10,0,0" ColumnDefinitions="*,*">
+            <Label Text="Tomorrow" FontSize="22" HorizontalOptions="Center"  />
+            <Label Text="Next 7 Days" FontSize="22" HorizontalOptions="Center" Grid.Column="1"  />
+        </Grid>
+    </Grid>
+</ContentPage>
